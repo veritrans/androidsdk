@@ -3,6 +3,11 @@
     package="id.co.veritrans.sdk"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-sdk android:minSdkVersion = "14" 
+              android:targetSdkVersion = "23" />
+  
+    <uses-permission android:name="android.permission.INTERNET" />
+    
     <application
         android:allowBackup="true"
         android:label="@string/app_name">
