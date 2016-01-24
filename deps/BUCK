@@ -1,0 +1,151 @@
+###
+# Dependencies
+###
+
+# appcompat-v7
+
+remote_file(
+  name = "appcompat-v7-aar",
+  url  = "mvn:com.android.support:appcompat-v7:aar:23.1.1",
+  sha1 = "8bcc1fd66fb28dad3ae95d753c36e99749c6b88f"
+)
+
+android_prebuilt_aar(
+  name = "appcompat-v7",
+  aar  = ":appcompat-v7-aar",
+  visibility = ["PUBLIC"]
+)
+
+# appcompat-v4
+remote_file(
+  name = "support-v4-aar",
+  url  = "mvn:com.android.support:support-v4:aar:23.1.1",
+  sha1 = "353820becdd80e136db280bd76725e67a7ddc053"
+)
+
+android_prebuilt_aar(
+  name = "support-v4",
+  aar  = ":support-v4-aar",
+  visibility = ["PUBLIC"]
+)
+
+# recyclerview-v7
+remote_file(
+  name = "recyclerview-v7-aar",
+  url  = "mvn:com.android.support:recyclerview-v7:aar:23.1.1",
+  sha1 = "db18da589eb40f572507a2bd028a281f35d4f451"
+)
+
+android_prebuilt_aar(
+  name = "recyclerview-v7",
+  aar  = ":recyclerview-v7-aar",
+  visibility = ["PUBLIC"]
+)
+
+# design
+
+remote_file(
+  name = "design-aar",
+  url  = "mvn:com.android.support:design:aar:23.1.1",
+  sha1 = "2df95c4d5dbe56f01cca3d4fa0656637105e22eb"
+)
+
+android_prebuilt_aar(
+  name = "design",
+  aar  = ":design-aar",
+  visibility = ["PUBLIC"]
+)
+
+# cardview
+
+remote_file(
+  name = "cardview-v7-aar",
+  url  = "mvn:com.android.support:cardview-v7:aar:23.1.1",
+  sha1 = "66b2abb9ee8d1657ba10ba07396b5c7abbbcdbe2"
+)
+
+android_prebuilt_aar(
+  name = "cardview-v7",
+  aar  = ":cardview-v7-aar",
+  visibility = ["PUBLIC"]
+)
+
+# annotation
+remote_file(
+  name = "annotation-jar",
+  url  = "mvn:com.android.support:support-annotations:jar:23.1.1",
+  sha1 = "8d680ba5a623724d1fb0e81c36a790f023a6cede"
+)
+
+prebuilt_jar(
+  name = "annotation",
+  binary_jar = ":annotation-jar",
+  visibility = ["PUBLIC"]
+)
+
+
+# retrofit and gson
+
+remote_file(
+  name = "retrofit-jar",
+  url  = "mvn:com.squareup.retrofit:retrofit:jar:1.9.0",
+  sha1 = "a681c044244d9fc375198588297a39ba78028423"
+)
+
+remote_file(
+  name = "gson-jar",
+  url  = "mvn:com.google.code.gson:gson:jar:2.3.1",
+  sha1 = "ecb6e1f8e4b0e84c4b886c2f14a1500caf309757"
+)
+
+prebuilt_jar(
+  name = "gson",
+  binary_jar = ":gson-jar",
+  visibility = ["PUBLIC"]
+)
+
+prebuilt_jar(
+  name = "retrofit",
+  binary_jar = ":retrofit-jar",
+  deps = [":gson"],
+  visibility = ["PUBLIC"]
+)
+
+# okhttp
+
+remote_file(
+  name = "okhttp-jar",
+  url  = "mvn:com.squareup.okhttp:okhttp:jar:2.3.0",
+  sha1 = "2e7bc7033dc2c8423e661224171b3133fb155b28"
+)
+
+prebuilt_jar(
+  name = "okhttp",
+  binary_jar = ":okhttp-jar",
+  visibility = ["PUBLIC"]
+)
+
+# rxandroid and rxjava
+remote_file(
+  name = "rxandroid-jar",
+  url  = "mvn:io.reactivex:rxandroid:jar:0.24.0",
+  sha1 = "42dab493b8f74b164e082f281480c9d493ff89da"
+)
+
+prebuilt_jar(
+  name = "rxandroid",
+  binary_jar = ":rxandroid-jar",
+  visibility = ["PUBLIC"]
+)
+
+remote_file(
+  name = "rxjava-jar",
+  url  = "mvn:io.reactivex:rxjava:jar:1.0.4",
+  sha1 = "00a607b0e12d2de769dc219e00b60a9b3d9e730d"
+)
+
+prebuilt_jar(
+  name = "rxjava",
+  binary_jar = ":rxjava-jar",
+  visibility = ["PUBLIC"]
+)

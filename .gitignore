@@ -1,1 +1,19 @@
-/build
+.DS_Store
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# BUCK
+
+buck-cache
+/buck-out
+/.buckd
+
+# GRADLE
+
+.gradle/
+build/
