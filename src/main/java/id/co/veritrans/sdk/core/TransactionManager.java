@@ -52,8 +52,8 @@ class TransactionManager {
     private static Subscription deleteCardSubscription = null;
     private static Subscription offersSubscription = null;
 
-    public static void registerCard(final Activity activity, CardTokenRequest cardTokenRequest, final
-    TransactionCallback callBack) {
+    public static void registerCard(final Activity activity, CardTokenRequest cardTokenRequest,
+                                    final String userId, final TransactionCallback callBack) {
 
         final VeritransSDK veritransSDK = VeritransSDK.getVeritransSDK();
         final String merchantToken = veritransSDK.getMerchantToken(activity);
@@ -108,6 +108,8 @@ class TransactionManager {
 
                                     if (registerCardResponse.getStatusCode().trim()
                                             .equalsIgnoreCase(Constants.SUCCESS_CODE_200)) {
+
+                                        registerCardResponse.setUserId(userId);
 
                                         VeritranceApiInterface apiInterface =
                                                 VeritransRestAdapter.getMerchantApiClient(activity, true);
