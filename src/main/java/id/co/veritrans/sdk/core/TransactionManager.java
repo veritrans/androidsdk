@@ -66,7 +66,7 @@ class TransactionManager {
 
                 final Observable<RegisterCardResponse> observable = apiInterface.registerCard(
                         cardTokenRequest.getCardNumber(),
-                        cardTokenRequest.getCardExpiryMonth(),
+                        String.valueOf(cardTokenRequest.getCardExpiryMonth()),
                         cardTokenRequest.getCardExpiryYear(),
                         cardTokenRequest.getClientKey()
                 );
