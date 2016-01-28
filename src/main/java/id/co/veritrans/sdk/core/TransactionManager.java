@@ -106,37 +106,37 @@ class TransactionManager {
                                         displayResponse(registerCardResponse);
                                     }
 
+                                    registerCardResponse.setUserId(userId);
+
+                                    VeritranceApiInterface apiInterface =
+                                            VeritransRestAdapter.getMerchantApiClient(activity, true);
+
+                                    if (apiInterface != null) {
+                                        Observable<CardResponse> registerCard = apiInterface
+                                                .registerCard(merchantToken, registerCardResponse);
+
+                                        cardSubscription = registerCard.subscribeOn(Schedulers.io())
+                                                .observeOn(AndroidSchedulers.mainThread())
+                                                .subscribe(new Observer<CardResponse>() {
+                                                    @Override
+                                                    public void onCompleted() {
+
+                                                    }
+
+                                                    @Override
+                                                    public void onError(Throwable e) {
+                                                        Log.e("CardSubscriber", e.getMessage());
+                                                    }
+
+                                                    @Override
+                                                    public void onNext(CardResponse cardResponse) {
+                                                    }
+                                                });
+
+                                    }
+
                                     if (registerCardResponse.getStatusCode().trim()
                                             .equalsIgnoreCase(Constants.SUCCESS_CODE_200)) {
-
-                                        registerCardResponse.setUserId(userId);
-
-                                        VeritranceApiInterface apiInterface =
-                                                VeritransRestAdapter.getMerchantApiClient(activity, true);
-
-                                        if (apiInterface != null) {
-                                            Observable<CardResponse> registerCard = apiInterface
-                                                    .registerCard(merchantToken, registerCardResponse);
-
-                                            cardSubscription = registerCard.subscribeOn(Schedulers.io())
-                                                    .observeOn(AndroidSchedulers.mainThread())
-                                                    .subscribe(new Observer<CardResponse>() {
-                                                        @Override
-                                                        public void onCompleted() {
-
-                                                        }
-
-                                                        @Override
-                                                        public void onError(Throwable e) {
-                                                            Log.e("CardSubscriber", e.getMessage());
-                                                        }
-
-                                                        @Override
-                                                        public void onNext(CardResponse cardResponse) {
-                                                        }
-                                                    });
-
-                                        }
                                         callBack.onSuccess(registerCardResponse);
                                     } else {
                                         if (registerCardResponse != null && !TextUtils.isEmpty(registerCardResponse.getStatusMessage())) {
