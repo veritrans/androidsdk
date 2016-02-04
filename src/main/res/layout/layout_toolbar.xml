@@ -3,7 +3,7 @@
     android:id="@+id/toolbar"
     style="@style/ToolBarStyle"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/lib/id.co.veritrans.sdk"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
 
