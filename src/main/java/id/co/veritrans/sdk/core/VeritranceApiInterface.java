@@ -63,7 +63,7 @@ public interface VeritranceApiInterface {
     @GET("/token/")
     Observable<TokenDetailsResponse> get3DSToken(@Query("card_number") String cardNumber,
                                                  @Query("card_cvv") int cardCVV,
-                                                 @Query("card_exp_month") int cardExpiryMonth,
+                                                 @Query("card_exp_month") String cardExpiryMonth,
                                                  @Query("card_exp_year") int cardExpiryYear,
                                                  @Query("client_key") String clientKey,
                                                  @Query("bank") String bank,
@@ -191,7 +191,7 @@ public interface VeritranceApiInterface {
     // register credit card info
     @GET("/card/register")
     Observable<RegisterCardResponse> registerCard(@Query("card_number") String cardNumber,
-                                                 @Query("card_exp_month") int cardExpMonth,
+                                                 @Query("card_exp_month") String cardExpMonth,
                                                  @Query("card_exp_year") int cardExpYear,
                                                  @Query("client_key") String clientKey);
 
@@ -242,7 +242,7 @@ public interface VeritranceApiInterface {
     @GET("/token/")
     Observable<TokenDetailsResponse> get3DSTokenInstalmentOffers(@Query("card_number") String cardNumber,
                                                                  @Query("card_cvv") int cardCVV,
-                                                                 @Query("card_exp_month") int cardExpiryMonth,
+                                                                 @Query("card_exp_month") String cardExpiryMonth,
                                                                  @Query("card_exp_year") int cardExpiryYear,
                                                                  @Query("client_key") String clientKey,
                                                                  @Query("bank") String bank,

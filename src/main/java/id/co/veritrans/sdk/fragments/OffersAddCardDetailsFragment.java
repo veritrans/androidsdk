@@ -331,7 +331,7 @@ public class OffersAddCardDetailsFragment extends Fragment {
 
                     CardTokenRequest cardTokenRequest = new CardTokenRequest(cardNumber, Integer
                             .parseInt(cvv),
-                            expMonth, expYear,
+                            String.valueOf(expMonth), expYear,
                             veritransSDK.getClientKey());
 
                     int instalmentTerm = 0;

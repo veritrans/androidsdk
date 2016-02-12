@@ -166,7 +166,7 @@ public class AddCardDetailsFragment extends Fragment {
 
                     CardTokenRequest cardTokenRequest = new CardTokenRequest(cardNumber, Integer
                             .parseInt(cvv),
-                            expMonth, expYear,
+                            String.valueOf(expMonth), expYear,
                             veritransSDK.getClientKey());
                     cardTokenRequest.setIsSaved(cbStoreCard.isChecked());
                     cardTokenRequest.setSecure(veritransSDK.getTransactionRequest().isSecureCard());
