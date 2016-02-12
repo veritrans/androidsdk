@@ -25,6 +25,7 @@ public class CardTokenRequest implements Serializable {
     // &bank=bni
     // &two_click=false
 
+
     private String cardNumber;
     private int cardCVV;
     private String cardExpiryMonth;
