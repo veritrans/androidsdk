@@ -1,4 +1,5 @@
 # **Veritrans SDK**
+### *We are in the process of depricating this SDK, and will be publishing our latest SDK Soon. Please contact support@veritrans.co.id for more information*
 
 ## 1 Overview
 ### 1.1 Description 
