@@ -1,5 +1,7 @@
 # **Veritrans SDK**
-### *We are in the process of depricating this SDK, and will be publishing our latest SDK Soon. Please contact support@veritrans.co.id for more information*
+### *We are deprecating this SDK in favour of [the latest](https://github.com/veritrans/veritrans-android)*
+
+The newest sdk is a major update on this implementation, it's likely most interfaces have stayed the same, but we've added a lot of features and updates in the [the latest](https://github.com/veritrans/veritrans-android) update.
 
 ## 1 Overview
 ### 1.1 Description 
